@@ -26,6 +26,7 @@ src-----
        |-views
           |---layouts
           |---partials
+          ¡
        
 
 
