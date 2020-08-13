@@ -16,17 +16,20 @@ modulos del proyecto
 extructura
 
 src-----
-       |-index.js
-       |-database.js
-       |-config
-       |-helpers
-       |-models
-       |-public
-       |-router
-       |-views
-          |---layouts
-          |---partials
-          ¡
+      |-index.js
+      |-database.js
+      |-config
+      |-helpers
+      |-models
+      |-public
+      |-router
+         |--- index.js
+         |---notes.js 
+         |---users.ls 
+      |-views
+         |---layouts
+         |---partials
+         ¡
        
 
 

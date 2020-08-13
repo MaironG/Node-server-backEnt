@@ -3,14 +3,15 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const flash = require('connect-flash');
-const passport = require('passport');
-const morgan = require('morgan');
-const connectMongo = require('connect-mongo');
-const mongoose = require('mongoose');
+//const flash = require('connect-flash');
+//const passport = require('passport');
+//const morgan = require('morgan');
+//const connectMongo = require('connect-mongo');
+//const mongoose = require('mongoose');
 
 // Initializations
 const app = express();
+require('./database');
 
 // settings
 app.set('port', process.env.PORT || 4000);
@@ -33,10 +34,17 @@ app.use(session({
   }));
 
 // routes
+app.use(require('./router/index'));          //incluyendo las rutas al server
+app.use(require('./router/users'));
+app.use(require('./router/notes'));
 
+//server listenning
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
   });
 
 // static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 module.exports = app;
